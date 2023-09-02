@@ -20,6 +20,10 @@ ul {
   padding-left: 0px;
 }
 
+footer {
+  text-align: center;
+}
+
 .active {
   color: #000000;
   cursor: default;
