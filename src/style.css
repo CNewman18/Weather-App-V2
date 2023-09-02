@@ -40,3 +40,7 @@ ul {
   bottom: 35px;
   font-size: 1rem;
 }
+
+.units-value {
+  text-decoration: none;
+}
