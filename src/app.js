@@ -10,6 +10,11 @@ function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature-element");
   let humidityElement = document.querySelector("#humidity-element");
   let windElement = document.querySelector("#wind-element");
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   celsiusTemperature = Math.round(response.data.main.temp);
   locationElement.innerHTML = name;
   descriptionElement.innerHTML = description;
