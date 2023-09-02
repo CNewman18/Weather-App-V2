@@ -11,32 +11,31 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="weather-app-container">
-      <h1 class="location-element">Crowle, England</h1>
+      <h1 class="location-element" id="location-element"></h1>
       <ul>
         <li>Saturday 17:41</li>
-        <li>Partly Cloudy</li>
+        <li class="description-element" id="description-element"></li>
       </ul>
       <div class="container">
         <div class="row">
           <h2 class="col-6">
-            <span class="temperature-element">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                alt="partly-cloudy"
-              />19</span
-            >
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt="partly-cloudy"
+            />
+            <span class="temperature-element" id="temperature-element"> </span>
             <span class="units">
               <a href="#" class="units-value">°C </a>|
               <a href="#" class="units-value">°F</a></span
             >
           </h2>
           <ul class="col-6">
-            <li>Precipitation:0%</li>
-            <li>Humidity:77%</li>
-            <li>Wind: 8km/h</li>
+            <li>Humidity: <span id="humidity-element"></span>%</li>
+            <li>Wind: <span id="wind-element"></span> km/h</li>
           </ul>
         </div>
       </div>
