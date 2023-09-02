@@ -34,9 +34,6 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
-
 function displayFarenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature-element");
@@ -52,6 +49,9 @@ function displayCelsiusTemperature(event) {
   farenheitLink.classList.remove("active");
   celsiusLink.classList.add("active");
 }
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
 
 let farenheitLink = document.querySelector("#farenheit-link");
 let celsiusLink = document.querySelector("#celsius-link");
