@@ -1,5 +1,4 @@
 function displayTemperature(response) {
-  console.log(response.data);
   let name = response.data.name;
   let description = response.data.weather[0].description;
   let temperature = Math.round(response.data.main.temp);
