@@ -50,6 +50,24 @@ function displayCelsiusTemperature(event) {
   celsiusLink.classList.add("active");
 }
 
+function currentTime() {
+  let now = new Date();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let dateTime = document.querySelector("#date-time");
+  dateTime.innerHTML = `${day}, ${hours}:${minutes}`;
+}
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
@@ -60,3 +78,5 @@ farenheitLink.addEventListener("click", displayFarenheitTemperature);
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 let celsiusTemperature = null;
+
+currentTime();
