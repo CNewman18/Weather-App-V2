@@ -1,7 +1,3 @@
-let city = "yeste";
-let apiKey = "598e202570aa8399fc1c4fb7e14a72a5";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
 function displayTemperature(response) {
   console.log(response.data);
   let name = response.data.name;
@@ -21,4 +17,17 @@ function displayTemperature(response) {
   windElement.innerHTML = wind;
 }
 
-axios.get(apiUrl).then(displayTemperature);
+function search(city) {
+  let apiKey = "598e202570aa8399fc1c4fb7e14a72a5";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
