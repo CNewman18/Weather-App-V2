@@ -37,12 +37,16 @@ function displayFarenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature-element");
   temperatureElement.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
+  celsiusLink.classList.remove("active");
+  farenheitLink.classList.add("active");
 }
 
 function displayCelsiusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature-element");
   temperatureElement.innerHTML = celsiusTemperature;
+  farenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
 }
 
 let farenheitLink = document.querySelector("#farenheit-link");

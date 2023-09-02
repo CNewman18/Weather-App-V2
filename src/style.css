@@ -66,3 +66,7 @@ ul {
   padding-right: 15px;
   padding-left: 15px;
 }
+.active {
+  color: #000000;
+  cursor: default;
+}
