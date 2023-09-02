@@ -11,8 +11,17 @@ h1 {
   margin: 0px;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
+form {
+  margin-top: 15px;
+}
+
 .weather-app-container {
   padding-left: 10px;
+  padding-right: 10px;
   display: block;
   margin: 20px auto;
   max-width: 600px;
@@ -43,4 +52,17 @@ ul {
 
 .units-value {
   text-decoration: none;
+}
+
+.btn {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.form {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
 }
