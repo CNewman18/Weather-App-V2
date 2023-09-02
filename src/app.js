@@ -10,6 +10,7 @@ function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature-element");
   let humidityElement = document.querySelector("#humidity-element");
   let windElement = document.querySelector("#wind-element");
+  celsiusTemperature = Math.round(response.data.main.temp);
   locationElement.innerHTML = name;
   descriptionElement.innerHTML = description;
   temperatureElement.innerHTML = temperature;
@@ -31,3 +32,16 @@ function handleSubmit(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+function displayFarenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature-element");
+  temperatureElement.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
+}
+
+let farenheitLink = document.querySelector("#farenheit-link");
+let celsiusLink = document.querySelector("#celsius-link");
+
+farenheitLink.addEventListener("click", displayFarenheitTemperature);
+
+let celsiusTemperature = null;
