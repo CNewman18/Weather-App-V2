@@ -22,6 +22,32 @@ function displayTemperature(response) {
   windElement.innerHTML = wind;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+        <div class="weather-forecast-date">${day}</div>
+        <img
+          src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+          alt="partly-cloudy"
+          class="weather-forecast-icon"
+        />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-maximum">25° </span>
+          <span class="weather-forecast-temperature-minimum">15°</span>
+        </div>
+      </div>
+   `;
+  });
+  forecastHTML = forecastHTML + `  </div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function search(city) {
   let apiKey = "598e202570aa8399fc1c4fb7e14a72a5";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -80,3 +106,5 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 let celsiusTemperature = null;
 
 currentTime();
+
+displayForecast();
