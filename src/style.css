@@ -83,3 +83,21 @@ footer {
   border-color: #dadde1;
   border-radius: 10px;
 }
+
+.weather-forecast-date {
+  text-align: center;
+}
+
+.weather-forecast-temperatures {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.weather-forecast-icon {
+  display: block;
+  margin: 0 auto;
+}
+
+.weather-forecast-temperature-minimum {
+  color: #70757a;
+}
