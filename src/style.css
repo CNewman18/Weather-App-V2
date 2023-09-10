@@ -96,6 +96,7 @@ footer {
 .weather-forecast-icon {
   display: block;
   margin: 0 auto;
+  width: 50px;
 }
 
 .weather-forecast-temperature-minimum {
