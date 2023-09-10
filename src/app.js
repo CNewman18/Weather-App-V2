@@ -6,7 +6,6 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response.data);
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class="row">`;
@@ -77,22 +76,6 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-function displayFarenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature-element");
-  temperatureElement.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
-  celsiusLink.classList.remove("active");
-  farenheitLink.classList.add("active");
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature-element");
-  temperatureElement.innerHTML = celsiusTemperature;
-  farenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-}
-
 function currentTime() {
   let now = new Date();
   let days = [
@@ -116,10 +99,5 @@ form.addEventListener("submit", handleSubmit);
 
 let farenheitLink = document.querySelector("#farenheit-link");
 let celsiusLink = document.querySelector("#celsius-link");
-
-farenheitLink.addEventListener("click", displayFarenheitTemperature);
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
-
-let celsiusTemperature = null;
 
 currentTime();
