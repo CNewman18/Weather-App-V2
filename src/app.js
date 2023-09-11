@@ -49,6 +49,7 @@ function displayTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let humidity = response.data.main.humidity;
   let wind = Math.round(response.data.wind.speed);
+  let bodyElement = document.querySelector("body");
   let locationElement = document.querySelector("#location-element");
   let descriptionElement = document.querySelector("#description-element");
   let temperatureElement = document.querySelector("#temperature-element");
@@ -66,6 +67,20 @@ function displayTemperature(response) {
   humidityElement.innerHTML = humidity;
   windElement.innerHTML = wind;
   getForecast(response.data.coord);
+  if (response.data.main.temp <= 10) {
+    bodyElement.classList.add("cold");
+    bodyElement.classList.remove("warm", "hot");
+  }
+  getForecast(response.data.coord);
+  if ((response.data.main.temp <= 29, response.data.main.temp > 11)) {
+    bodyElement.classList.add("warm");
+    bodyElement.classList.remove("hot", "cold");
+  }
+  getForecast(response.data.coord);
+  if (response.data.main.temp >= 30) {
+    bodyElement.classList.add("hot");
+    bodyElement.classList.remove("warm", "cold");
+  }
 }
 function search(city) {
   let apiKey = "598e202570aa8399fc1c4fb7e14a72a5";

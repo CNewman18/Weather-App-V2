@@ -82,6 +82,7 @@ footer {
   border-width: 1px;
   border-color: #dadde1;
   border-radius: 10px;
+  background-color: white;
 }
 
 .weather-forecast-date {
@@ -101,4 +102,30 @@ footer {
 
 .weather-forecast-temperature-minimum {
   color: #70757a;
+}
+
+.cold {
+  background: linear-gradient(
+    69.9deg,
+    rgb(76, 79, 106) 3.2%,
+    rgb(118, 124, 163) 97.6%
+  );
+}
+
+.warm {
+  background: linear-gradient(
+    109.6deg,
+    rgb(255, 219, 47) 11.2%,
+    rgb(244, 253, 0) 100.2%
+  );
+}
+
+.hot {
+  background: linear-gradient(
+    90.3deg,
+    rgb(255, 255, 255) 3%,
+    rgb(235, 158, 98) 34.6%,
+    rgb(177, 10, 10) 63.7%,
+    rgb(0, 0, 0) 102%
+  );
 }
