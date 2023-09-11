@@ -105,28 +105,30 @@ footer {
 }
 
 .cold {
-  background: linear-gradient(
-    69.9deg,
-    rgb(76, 79, 106) 3.2%,
-    rgb(118, 124, 163) 97.6%
+  background: radial-gradient(
+    328px at 2.9% 15%,
+    rgb(191, 224, 251) 0%,
+    rgb(232, 233, 251) 25.8%,
+    rgb(252, 239, 250) 50.8%,
+    rgb(234, 251, 251) 77.6%,
+    rgb(240, 251, 244) 100.7%
   );
 }
 
 .warm {
-  background: linear-gradient(
-    109.6deg,
-    rgb(255, 219, 47) 11.2%,
-    rgb(244, 253, 0) 100.2%
+  background: radial-gradient(
+    905px at 4.9% 85.8%,
+    rgb(255, 243, 242) 0.1%,
+    rgb(255, 247, 220) 57.6%
   );
 }
 
 .hot {
   background: linear-gradient(
-    90.3deg,
-    rgb(255, 255, 255) 3%,
-    rgb(235, 158, 98) 34.6%,
-    rgb(177, 10, 10) 63.7%,
-    rgb(0, 0, 0) 102%
+    110.3deg,
+    rgb(238, 179, 123) 8.7%,
+    rgb(216, 103, 77) 47.5%,
+    rgb(114, 43, 54) 89.1%
   );
 }
 
@@ -141,6 +143,10 @@ footer {
 
 .dark-mode-search-form {
   background-color: black;
+}
+
+footer {
+  margin-top: 20px;
 }
 
 button {
