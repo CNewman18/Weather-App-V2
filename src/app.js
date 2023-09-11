@@ -117,6 +117,52 @@ function currentTime() {
   dateTime.innerHTML = `${day}, ${hours}:${minutes}`;
 }
 
+function findCurrentLocation(event) {
+  function showTemperature(response) {
+    let cityName = response.data.name;
+    let temperature = Math.round(response.data.main.temp);
+    let description = response.data.weather[0].description;
+    let humidity = response.data.main.humidity;
+    let wind = response.data.wind.speed;
+    let nameElement = document.querySelector("#location-element");
+    let temperatureElement = document.querySelector("#temperature-element");
+    let descriptionElement = document.querySelector("#description-element");
+    let humidityElement = document.querySelector("#humidity-element");
+    let windElement = document.querySelector("#wind-element");
+    let bodyElement = document.querySelector("body");
+    nameElement.innerHTML = cityName;
+    temperatureElement.innerHTML = temperature;
+    descriptionElement.innerHTML = description;
+    humidityElement.innerHTML = humidity;
+    windElement.innerHTML = wind;
+    if (response.data.main.temp <= 10) {
+      bodyElement.classList.add("cold");
+      bodyElement.classList.remove("warm", "hot");
+    }
+    getForecast(response.data.coord);
+    if ((response.data.main.temp <= 29, response.data.main.temp > 11)) {
+      bodyElement.classList.add("warm");
+      bodyElement.classList.remove("hot", "cold");
+    }
+    getForecast(response.data.coord);
+    if (response.data.main.temp >= 30) {
+      bodyElement.classList.add("hot");
+      bodyElement.classList.remove("warm", "cold");
+    }
+  }
+  function retrievePosition(position) {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    let units = "metric";
+    let apiKey = "598e202570aa8399fc1c4fb7e14a72a5";
+    let unit = "metric";
+    let apiEndPoint = `https://api.openweathermap.org/data/2.5/weather`;
+    let apiUrl = `${apiEndPoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
+    axios.get(apiUrl).then(showTemperature);
+  }
+  navigator.geolocation.getCurrentPosition(retrievePosition);
+}
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
@@ -124,3 +170,5 @@ let farenheitLink = document.querySelector("#farenheit-link");
 let celsiusLink = document.querySelector("#celsius-link");
 
 currentTime();
+
+findCurrentLocation();
