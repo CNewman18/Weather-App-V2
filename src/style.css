@@ -129,3 +129,22 @@ footer {
     rgb(0, 0, 0) 102%
   );
 }
+
+.dark-mode {
+  background: radial-gradient(
+    circle at 24.1% 68.8%,
+    rgb(50, 50, 50) 0%,
+    rgb(0, 0, 0) 99.4%
+  );
+  color: #7c7c7c;
+}
+
+.dark-mode-search-form {
+  background-color: black;
+}
+
+button {
+  max-width: 150px;
+  display: block;
+  margin: 0 auto;
+}

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <div class="weather-app-container">
+    <div class="weather-app-container" id="weather-app-container">
       <form class="search-form" id="search-form">
         <div class="row">
           <div class="col-9">
@@ -32,6 +32,7 @@
               type="submit"
               value="Search"
               class="form-control btn btn-primary shadow-sm"
+              id="search-button"
             />
           </div>
         </div>
@@ -67,6 +68,11 @@
 
         <div id="weather-forecast"></div>
       </div>
+    </div>
+    <div class="text-center">
+      <button class="btn btn-primary shadow-sm" id="dark-mode-button">
+        Dark Mode
+      </button>
     </div>
     <footer>
       <a href="https://github.com/CNewman18/Weather-App-V2">Open source code</a>

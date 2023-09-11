@@ -163,12 +163,21 @@ function findCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(retrievePosition);
 }
 
+function darkMode(event) {
+  let weatherAppContainer = document.querySelector("#weather-app-container");
+  let searchButton = document.querySelector("#search-button");
+  weatherAppContainer.classList.toggle("dark-mode");
+  searchButton.classList.toggle("dark-mode-search-form");
+}
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 let farenheitLink = document.querySelector("#farenheit-link");
 let celsiusLink = document.querySelector("#celsius-link");
 
+let darkModeButton = document.querySelector("#dark-mode-button");
+darkModeButton.addEventListener("click", darkMode);
 currentTime();
 
 findCurrentLocation();
